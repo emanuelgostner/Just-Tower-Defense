@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayfabManager : MonoBehaviour
@@ -37,17 +38,24 @@ public class PlayfabManager : MonoBehaviour
     {
         messageText.text = "Registered and logged in!";
         Debug.Log("Registered and logged in!");
+        OpenMainMenu();
     }
     
     private void OnLoginSuccess(LoginResult result)
     {
         messageText.text = "Logged in!";
         Debug.Log("Logged in!");
+        OpenMainMenu();
     }
 
     private void OnError(PlayFabError error)
     {
         messageText.text = error.ErrorMessage;
         Debug.Log(error.GenerateErrorReport());
+    }
+    
+    public void OpenMainMenu()
+    {
+        SceneManager.LoadScene("Scenes/MainMenu");
     }
 }
