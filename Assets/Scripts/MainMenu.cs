@@ -16,6 +16,11 @@ public class MainMenu : MonoBehaviour
     {
         
     }
+    
+    public void DifficultyButton()
+    {
+        SceneManager.LoadScene("Scenes/DifficultyScreen");
+    }
 
     public void QuitButton()
     {
