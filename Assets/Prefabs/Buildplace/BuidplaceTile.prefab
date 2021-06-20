@@ -109,4 +109,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c180bd4601467d343b5cde3b0d7832b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 8351768978671048130, guid: cc60c0ddfa3fefa488846d2bcd9449ae, type: 3}
