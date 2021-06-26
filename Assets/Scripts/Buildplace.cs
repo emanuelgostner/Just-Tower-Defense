@@ -7,15 +7,15 @@ using UnityEngine.UI;
 public class Buildplace : MonoBehaviour {
     // Tower gameObject. Public variables can be assigned via GUI
     private GameObject towerSettings;
-    public GameObject towerPrefab0;
-    public GameObject towerPrefab1;
-    public GameObject towerPrefab2;
-    private int maxLevel = 2;
+    public GameObject currentTower;
+    private int maxLevel;
     private int curLevel = 0;
+    public GameObject[] towerPrefabs;
 
     void Start()
     {
         towerSettings = GameObject.Find("TowerSettings");
+        maxLevel = towerPrefabs.Length;
     }
     // Built in unity function. Triggered when click and release
     void OnMouseUpAsButton() {
@@ -35,6 +35,9 @@ public class Buildplace : MonoBehaviour {
     {
         //CoinBalance coinBalance = CoinBalance.Instance;
         Debug.Log("place Tower", this);
+        currentTower = (GameObject)Instantiate(towerPrefabs[curLevel]);
+        currentTower.transform.position = transform.position + Vector3.up;
+        curLevel++;
     }
     public void upgradeTower()
     {

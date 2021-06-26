@@ -32,8 +32,9 @@ public class SelectedTower : MonoBehaviour
                  selectedBuildplace.GetComponent<Buildplace>().getMaxLevel())
         {
             closeMenuObj.gameObject.SetActive(true);
-            upgradeTowerObj.gameObject.SetActive(false);
-            removeTowerObj.gameObject.SetActive(false);
+            placeTowerObj.gameObject.SetActive(false);
+            upgradeTowerObj.gameObject.SetActive(true);
+            removeTowerObj.gameObject.SetActive(true);
         }
         // Builable place has tower with max level
         else
@@ -51,16 +52,19 @@ public class SelectedTower : MonoBehaviour
     public void placeTower()
     {
         selectedBuildplace.GetComponent<Buildplace>().placeTower();
+        handleButtonVisibility();
     }
 
     public void upgradeTower()
     {
         selectedBuildplace.GetComponent<Buildplace>().upgradeTower();
+        handleButtonVisibility();
     }
 
     public void removeTower()
     {
         selectedBuildplace.GetComponent<Buildplace>().removeTower();
+        handleButtonVisibility();
     }
 
     public void closeMenu()
