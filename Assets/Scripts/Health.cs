@@ -25,8 +25,15 @@ public class Health : MonoBehaviour
     // Decrease the current Health by removing one '-'
     public void Decrease() {
         if (Current() > 1)
+        {
             tm.text = tm.text.Remove(tm.text.Length - 1);
+        }
         else
+        {
             Destroy(transform.parent.gameObject);
+            // Increases coin balance after defeating monster
+            CoinBalance.Instance.AddToCoinBalance(100);
+        }
+            
     }
 }
