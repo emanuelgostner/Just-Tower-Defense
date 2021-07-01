@@ -19,7 +19,6 @@ public class Monster : MonoBehaviour
         // Then destory monster object (gameObject = the gameObject this script is attached to)
         if (co.name == "End" && _colliding)
         {
-            Debug.Log("Trigger Decrease");
             _colliding = false;
             co.GetComponentInChildren<Health>().Decrease();
             Destroy(gameObject);

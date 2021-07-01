@@ -50,7 +50,6 @@ public class SelectedTower : MonoBehaviour
     public void SetSelectedBuildplace(GameObject buildplace)
     {
         this.selectedBuildplace = buildplace;
-        Debug.Log("Buildplace updated", selectedBuildplace);
         handleButtonVisibility();
     }
 

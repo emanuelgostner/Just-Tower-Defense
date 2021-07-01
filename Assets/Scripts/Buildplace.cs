@@ -12,14 +12,13 @@ public class Buildplace : MonoBehaviour {
     private int maxLevel;
     private int curLevel = 0;
     public GameObject[] towerPrefabs;
-    CoinBalance coinBalance = CoinBalance.Instance;
+    private static CoinBalance coinBalance = CoinBalance.Instance;
     public int towerCost = 50;
 
     void Start()
     {
         towerSettings = GameObject.Find("TowerSettings");
         maxLevel = towerPrefabs.Length;
-        coinBalance.AddToCoinBalance(200);
     }
     // Built in unity function. Triggered when click and release
     void OnMouseUpAsButton() {
@@ -40,6 +39,7 @@ public class Buildplace : MonoBehaviour {
             currentTower.transform.position = transform.position + Vector3.up;
             curLevel++;
             coinBalance.SubtractFromCoinBalance(towerCost);
+            Debug.Log(coinBalance.GetCoinBalance());
         }
     }
     public void upgradeTower()
