@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DifficultyScreen.unity
     guid: 3d17770d21e8d98468a2ca17769916c1
+  - enabled: 1
+    path: Assets/Scenes/GameOverScreen.unity
+    guid: 3fe0efc26b03f2040b2455a50b49bb9e
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

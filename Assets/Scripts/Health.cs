@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
     // The TextMesh Component
-    TextMesh tm;
+    private TextMesh tm;
+    private int health = 5;
 
     // Use this for initialization
     void Start () {
@@ -18,21 +21,22 @@ public class Health : MonoBehaviour
         transform.forward = Camera.main.transform.forward;
     }
     // Return the current Health by counting the '-'
-    public int Current() {
-        return tm.text.Length;
+    public int CurrentHealth()
+    {
+        return health;
     }
-
-    // Decrease the current Health by removing one '-'
+    public static string Repeat(string s, int n)
+        => new StringBuilder(s.Length * n).Insert(0, s, n).ToString();
+    // Decrease the current Health or open GameOver Scene if health reached 0
     public void Decrease() {
-        if (Current() > 1)
+        if (health > 1)
         {
-            tm.text = tm.text.Remove(tm.text.Length - 1);
+            health--;
+            tm.text = Repeat("- ", health);
         }
         else
         {
-            Destroy(transform.parent.gameObject);
-            // Increases coin balance after defeating monster
-            CoinBalance.Instance.AddToCoinBalance(100);
+            SceneManager.LoadScene("Scenes/GameOverScreen");
         }
             
     }

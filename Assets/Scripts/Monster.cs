@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Monster : MonoBehaviour
 {
+    private bool _colliding = true;
     // Start is called before the first frame update
     private void Start () {
         // Navigate to End
@@ -16,10 +17,12 @@ public class Monster : MonoBehaviour
     private void OnTriggerEnter(Collider co) {
         // If the collision object is "End" access its healthBar Script and call method to decrease health
         // Then destory monster object (gameObject = the gameObject this script is attached to)
-        if (co.name == "End") {
+        if (co.name == "End" && _colliding)
+        {
+            Debug.Log("Trigger Decrease");
+            _colliding = false;
             co.GetComponentInChildren<Health>().Decrease();
             Destroy(gameObject);
         }
     }
-    
 }

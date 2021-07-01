@@ -23,9 +23,9 @@ public class Buildplace : MonoBehaviour {
     }
     // Built in unity function. Triggered when click and release
     void OnMouseUpAsButton() {
+        // Check if no UI elements are clicked. 
         if (!IsPointerOverUIObject())
         {
-            Debug.Log("Buildplace clicked", this);
             // Set this Buildplace as the selected Buildplace in the TowerSettings handler
             towerSettings.GetComponent<SelectedTower>().SetSelectedBuildplace(this.gameObject);
         }
@@ -33,7 +33,6 @@ public class Buildplace : MonoBehaviour {
 
     public void placeTower()
     {
-        Debug.Log("place Tower", this);
         // Check if coinBalance is sufficient to place tower
         if (coinBalance.GetCoinBalance() >= towerCost)
         {
@@ -45,8 +44,7 @@ public class Buildplace : MonoBehaviour {
     }
     public void upgradeTower()
     {
-        //CoinBalance coinBalance = CoinBalance.Instance;
-        Debug.Log("upgrade Tower", this);
+        // If current coin balance is sufficient. Destroy actual tower and replace it by the higher level tier tower
         if (coinBalance.GetCoinBalance() >= towerCost)
         {
             Destroy(currentTower);
@@ -58,12 +56,10 @@ public class Buildplace : MonoBehaviour {
     }
     public void removeTower()
     {
-        //CoinBalance coinBalance = CoinBalance.Instance;
-        Debug.Log("remove Tower", this);
         Destroy(currentTower);
         curLevel = 0;
     }
-    //When Touching UI
+    // Detect the touching of UI elements
     private bool IsPointerOverUIObject()
     {
         PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
