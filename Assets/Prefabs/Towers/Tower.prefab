@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1164422993195296990}
   - component: {fileID: 8306518584575325484}
   - component: {fileID: 5138790877657256511}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,8 @@ GameObject:
   - component: {fileID: 896165467292356048}
   - component: {fileID: 2038256115303905014}
   - component: {fileID: 3739181035913733814}
-  m_Layer: 0
+  - component: {fileID: 1305367300671407217}
+  m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,8 +189,21 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1305367300671407217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148052281816449394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5a5aab1415ec14fab310695bb9af7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6184579822274742558, guid: cf1dded6f06ca9d4487c45d8034225b9, type: 3}
 --- !u!1 &8351768978671048130
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7561390140759552401}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
