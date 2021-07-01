@@ -112,5 +112,6 @@ MonoBehaviour:
   currentTower: {fileID: 0}
   towerPrefabs:
   - {fileID: 8351768978671048130, guid: cc60c0ddfa3fefa488846d2bcd9449ae, type: 3}
-  - {fileID: 8351768978671048130, guid: cc60c0ddfa3fefa488846d2bcd9449ae, type: 3}
-  - {fileID: 8351768978671048130, guid: cc60c0ddfa3fefa488846d2bcd9449ae, type: 3}
+  - {fileID: 887009741641107914, guid: 4a4c847913298224aada0f16e8930513, type: 3}
+  - {fileID: 6477093154031055018, guid: fb0e875d4a8e2024b89e0199eb53cb74, type: 3}
+  towerCost: 50
