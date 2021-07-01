@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5265839784132479156}
   - component: {fileID: 2774131061731603541}
   - component: {fileID: 5167190071157663764}
-  m_Layer: 0
+  - component: {fileID: 4038577219157358407}
+  m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,8 +94,21 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4038577219157358407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536545087606693434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5a5aab1415ec14fab310695bb9af7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6184579822274742558, guid: cf1dded6f06ca9d4487c45d8034225b9, type: 3}
 --- !u!1 &1898574870212833094
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +121,8 @@ GameObject:
   - component: {fileID: 2191282196411571672}
   - component: {fileID: 4280394859005148377}
   - component: {fileID: 4946628491324796982}
-  m_Layer: 0
+  - component: {fileID: 8166354391638149295}
+  m_Layer: 2
   m_Name: Sphere (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,8 +203,21 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8166354391638149295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898574870212833094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5a5aab1415ec14fab310695bb9af7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6184579822274742558, guid: cf1dded6f06ca9d4487c45d8034225b9, type: 3}
 --- !u!1 &5413641746370023506
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +230,7 @@ GameObject:
   - component: {fileID: 2869403715918356754}
   - component: {fileID: 4464918394941118410}
   - component: {fileID: 8587798761079694847}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9180203945615614612}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tower3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +359,8 @@ GameObject:
   - component: {fileID: 4330957385091823781}
   - component: {fileID: 6610960782901023334}
   - component: {fileID: 2999195353997432910}
-  m_Layer: 0
+  - component: {fileID: 5654770254585050375}
+  m_Layer: 2
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,5 +441,18 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5654770254585050375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9074593741819165721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5a5aab1415ec14fab310695bb9af7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6184579822274742558, guid: cf1dded6f06ca9d4487c45d8034225b9, type: 3}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3424801361530865281}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tower2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2443313808356216332}
   - component: {fileID: 838956280662400155}
   - component: {fileID: 3484130140192437390}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,8 @@ GameObject:
   - component: {fileID: 6346622828605776364}
   - component: {fileID: 1464856047367132410}
   - component: {fileID: 2012644950823205563}
-  m_Layer: 0
+  - component: {fileID: 6218802104358547793}
+  m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,8 +222,21 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6218802104358547793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3674659853269648042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5a5aab1415ec14fab310695bb9af7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6184579822274742558, guid: cf1dded6f06ca9d4487c45d8034225b9, type: 3}
 --- !u!1 &7898088635024555465
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +249,8 @@ GameObject:
   - component: {fileID: 7051231814412908158}
   - component: {fileID: 5276980158750339449}
   - component: {fileID: 5833341749405080908}
-  m_Layer: 0
+  - component: {fileID: 8895290512202228349}
+  m_Layer: 2
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,5 +331,18 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8895290512202228349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7898088635024555465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5a5aab1415ec14fab310695bb9af7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6184579822274742558, guid: cf1dded6f06ca9d4487c45d8034225b9, type: 3}
