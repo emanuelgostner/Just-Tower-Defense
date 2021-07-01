@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
     // Use this for initialization
     void Start () {
         tm = GetComponent<TextMesh>();
-        tm.text = Repeat("- ", health)
+        tm.text = Repeat("- ", health);
     }
 
     // Update is called once per frame

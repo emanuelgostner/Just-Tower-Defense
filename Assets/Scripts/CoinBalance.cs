@@ -7,7 +7,7 @@ public class CoinBalance
     private static CoinBalance _instance = null;
     private static readonly object Padlock = new object();
 
-    private static int _coinBalance = 500;
+    private static int _coinBalance = 200;
     private static List<ICoinBalanceSubscriber> subscribers = new List<ICoinBalanceSubscriber>();
     
     private CoinBalance()
