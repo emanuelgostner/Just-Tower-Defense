@@ -8,11 +8,12 @@ public class Health : MonoBehaviour
 {
     // The TextMesh Component
     private TextMesh tm;
-    private int health = 5;
+    public int health = 5;
 
     // Use this for initialization
     void Start () {
         tm = GetComponent<TextMesh>();
+        tm.text = Repeat("- ", health)
     }
 
     // Update is called once per frame
@@ -34,10 +35,14 @@ public class Health : MonoBehaviour
             health--;
             tm.text = Repeat("- ", health);
         }
-        else
+        // Falls
+        else if(this.name == "End")
         {
             SceneManager.LoadScene("Scenes/GameOverScreen");
         }
-            
+        else if(this.name == "Monster")
+        {
+            Destroy(this);
+        }
     }
 }
