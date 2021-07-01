@@ -20,18 +20,21 @@ public class DifficultyScreen : MonoBehaviour
     public void EasyButton()
     {
         //TODO: save diff in variable
+        LevelHandler.SetMonstersToBeSpawned(3);
         ReturnToMainMenu();
     }
     
     public void MediumButton()
     {
         //TODO: save diff in variable
+        LevelHandler.SetMonstersToBeSpawned(4);
         ReturnToMainMenu();
     }
     
     public void HardButton()
     {
         //TODO: save diff in variable
+        LevelHandler.SetMonstersToBeSpawned(5);
         ReturnToMainMenu();
     }
 

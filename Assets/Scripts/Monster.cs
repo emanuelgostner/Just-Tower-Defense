@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Monster : MonoBehaviour
 {
-    private bool _colliding = true;
     // Start is called before the first frame update
     private void Start () {
         // Navigate to End
@@ -17,11 +16,22 @@ public class Monster : MonoBehaviour
     private void OnTriggerEnter(Collider co) {
         // If the collision object is "End" access its healthBar Script and call method to decrease health
         // Then destory monster object (gameObject = the gameObject this script is attached to)
-        if (co.name == "End" && _colliding)
-        {
-            _colliding = false;
-            co.GetComponentInChildren<Health>().Decrease();
+        if (co.name == "End") {
+            co.GetComponentInChildren<Health>().DecreasePlayerHealth();
+            // Destroys the monster after reaching the goal
             Destroy(gameObject);
+            LevelHandler.DecreaseCurrentMonsters();
+
+            if (LevelHandler.GetCurrentMonsters() == 0)
+            {
+                // Start new round, increase coin balance and current round, reset monster spawner
+                LevelHandler.StartNewRound();
+            }
         }
     }
+    private void OnMonsterShotByTower(Collider co)
+    {
+        co.GetComponentInChildren<Health>().DecreaseMonsterHealth();
+    }
+    
 }
