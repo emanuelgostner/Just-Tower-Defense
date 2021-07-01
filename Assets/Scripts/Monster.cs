@@ -17,7 +17,7 @@ public class Monster : MonoBehaviour
         // If the collision object is "End" access its healthBar Script and call method to decrease health
         // Then destory monster object (gameObject = the gameObject this script is attached to)
         if (co.name == "End") {
-            co.GetComponentInChildren<Health>().DecreasePlayerHealth();
+            co.GetComponentInChildren<Health>().Decrease();
             // Destroys the monster after reaching the goal
             Destroy(gameObject);
             LevelHandler.DecreaseCurrentMonsters();
@@ -29,9 +29,4 @@ public class Monster : MonoBehaviour
             }
         }
     }
-    private void OnMonsterShotByTower(Collider co)
-    {
-        co.GetComponentInChildren<Health>().DecreaseMonsterHealth();
-    }
-    
 }
