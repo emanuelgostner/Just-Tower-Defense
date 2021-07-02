@@ -8,6 +8,10 @@ public static class LevelHandler
     private static int _timeForMonsterToPassToGoal = 6;
     private static int _destroyedMonsters = 0;
 
+    public static int GetCurrentRound()
+    {
+        return _currentRound;
+    }
     // Handles spawning of monsters and start of new round
     public static int GetMonstersToBeSpawned()
     {

@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 3790422540585292450}
   m_Layer: 0
   m_Name: CubeMonster2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a937c8e844532424fb14beb26f6733eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterHealthReduceValue: 2
 --- !u!54 &3790422540585292450
 Rigidbody:
   m_ObjectHideFlags: 0

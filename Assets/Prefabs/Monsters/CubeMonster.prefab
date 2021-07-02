@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 379707491643870381}
   m_Layer: 0
   m_Name: CubeMonster
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6efa52c572a904ca4dbe82881f564c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
 --- !u!23 &379707492151827045
 MeshRenderer:
   m_ObjectHideFlags: 0

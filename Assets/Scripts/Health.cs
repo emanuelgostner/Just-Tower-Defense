@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
 {
     // The TextMesh Component
     private TextMesh tm;
-    public int health = 5;
+    public int health = 3;
 
     // Use this for initialization
     void Start () {
@@ -29,21 +29,42 @@ public class Health : MonoBehaviour
     public static string Repeat(string s, int n)
         => new StringBuilder(s.Length * n).Insert(0, s, n).ToString();
     // Decrease the current Health or open GameOver Scene if health reached 0
-    public void Decrease() {
-        if (health > 1)
+    public void Decrease(int amount = 1)
+    {
+        GameObject parent = this.transform.parent.gameObject;
+        if(parent.CompareTag("Goal"))
         {
-            health--;
-            tm.text = Repeat("- ", health);
+            DecreaseHealth(amount + LevelBasedHealthDecrease());
+            if (health <=0)
+            {
+                SceneManager.LoadScene("Scenes/GameOverScreen");
+            }
         }
-        // Falls
-        else if(this.name == "End")
+        else if(parent.CompareTag("Enemy"))
         {
-            SceneManager.LoadScene("Scenes/GameOverScreen");
+            DecreaseHealth(amount);
+            if (health <=0)
+            {
+                Destroy(parent);
+                LevelHandler.IncreaseDestroyedMonsters();
+            }
         }
-        else if(this.name == "Monster")
-        {
-            Destroy(this);
-            LevelHandler.IncreaseDestroyedMonsters();
-        }
+    }
+
+    private void DecreaseHealth(int amount)
+    {
+        health = health -  amount;
+        health = health < 0 ? 0 : health;
+        tm.text = Repeat("- ", health);
+    }
+    /*
+     * Levelbasierte Abzugshöhe der Lebenspunkte
+     * Increase the lost health by 1 every 5 levels
+     */
+    private int LevelBasedHealthDecrease()
+    {
+        int levelChallengerValue = 5;
+        int levelChallenger = LevelHandler.GetCurrentRound() / levelChallengerValue;
+        return levelChallenger;
     }
 }

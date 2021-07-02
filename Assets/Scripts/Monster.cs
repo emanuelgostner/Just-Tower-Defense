@@ -5,7 +5,9 @@ using UnityEngine.AI;
 
 public class Monster : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Gegnerbasierte Abzugshöhe der Lebenspunkte
+    public int monsterHealthReduceValue = 1;
+    
     private void Start () {
         // Navigate to End
         var end = GameObject.Find("End");
@@ -17,7 +19,8 @@ public class Monster : MonoBehaviour
         // If the collision object is "End" access its healthBar Script and call method to decrease health
         // Then destory monster object (gameObject = the gameObject this script is attached to)
         if (co.name == "End") {
-            co.GetComponentInChildren<Health>().Decrease();
+            // 
+            co.GetComponentInChildren<Health>().Decrease(monsterHealthReduceValue);
             // Destroys the monster after reaching the goal
             Destroy(gameObject);
             LevelHandler.DecreaseCurrentMonsters();

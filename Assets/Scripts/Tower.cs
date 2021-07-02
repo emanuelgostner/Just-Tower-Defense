@@ -12,7 +12,7 @@ public class Tower : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("shootCycle", 0f, 0.5f);
+        InvokeRepeating("shootCycle", 0f, 1.0f);
     }
     void OnTriggerEnter(Collider co) {
         // Was it a Monster? Then Shoot it
@@ -28,10 +28,17 @@ public class Tower : MonoBehaviour
 
     void shootCycle()
     {
-        if (_monsters.Count > 0)
+        int tmp_i = 0;
+        for(int i = 0; i<_monsters.Count;i++)
         {
-            shootMonster(_monsters[0]);
+            if(_monsters[i] != null)
+            {
+                shootMonster(_monsters[i]);
+                tmp_i = i;
+                break;
+            }
         }
+        _monsters.RemoveRange(0, tmp_i);
     }
     void shootMonster(Collider co)
     {

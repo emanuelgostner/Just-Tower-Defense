@@ -23,10 +23,10 @@ public class Bullet : MonoBehaviour
         }
     }
     void OnTriggerEnter(Collider co) {
-        /*Health health = co.GetComponentInChildren<Health>();
+        Health health = co.GetComponentInChildren<Health>();
         if (health) {
             health.Decrease();
             Destroy(gameObject);
-        }*/
+        }
     }
 }
