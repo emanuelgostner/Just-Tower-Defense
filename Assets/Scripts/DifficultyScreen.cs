@@ -2,38 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class DifficultyScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public enum Difficulty {
+        Easy,
+        Medium,
+        Hard,
+    };
+    private static Difficulty difficulty = Difficulty.Medium;
     
     public void EasyButton()
     {
-        //TODO: save diff in variable
+        difficulty = Difficulty.Easy;
         LevelHandler.SetMonstersToBeSpawned(3);
         ReturnToMainMenu();
     }
     
     public void MediumButton()
     {
-        //TODO: save diff in variable
+        difficulty = Difficulty.Medium;
         LevelHandler.SetMonstersToBeSpawned(4);
         ReturnToMainMenu();
     }
     
     public void HardButton()
     {
-        //TODO: save diff in variable
+        difficulty = Difficulty.Hard;
         LevelHandler.SetMonstersToBeSpawned(5);
         ReturnToMainMenu();
     }
@@ -41,5 +35,10 @@ public class DifficultyScreen : MonoBehaviour
     private void ReturnToMainMenu()
     {
         SceneManager.LoadScene("Scenes/MainMenu");
+    }
+
+    public static Difficulty GetDifficulty()
+    {
+        return difficulty;
     }
 }

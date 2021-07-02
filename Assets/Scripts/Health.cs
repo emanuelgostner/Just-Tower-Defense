@@ -12,6 +12,21 @@ public class Health : MonoBehaviour
 
     // Use this for initialization
     void Start () {
+        if (this.transform.parent.gameObject.CompareTag("Goal"))
+        {
+            switch (DifficultyScreen.GetDifficulty())
+            {
+                case DifficultyScreen.Difficulty.Easy:
+                    health = health + 3;
+                    break;
+                case DifficultyScreen.Difficulty.Medium:
+                    health = health + 0;
+                    break;
+                case DifficultyScreen.Difficulty.Hard:
+                    health = health > 3 ? health - 3 : 3;
+                    break;
+            }
+        }
         tm = GetComponent<TextMesh>();
         tm.text = Repeat("- ", health);
     }
