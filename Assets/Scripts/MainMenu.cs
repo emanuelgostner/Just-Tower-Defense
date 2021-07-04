@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        CoinBalance.Instance.SubtractFromCoinBalance(CoinBalance.Instance.GetCoinBalance());
+        CoinBalance.Instance.ResetCoinBalance();
         LevelHandler.ResetLevelHandler();
         SceneManager.LoadScene("Scenes/Game");
     }

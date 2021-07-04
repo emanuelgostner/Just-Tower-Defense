@@ -12,7 +12,7 @@ public class Buildplace : MonoBehaviour {
     private int maxLevel;
     private int curLevel = 0;
     public GameObject[] towerPrefabs;
-    private static CoinBalance coinBalance = CoinBalance.Instance;
+    private CoinBalance coinBalance = CoinBalance.Instance;
     public int towerCost = 50;
 
     void Start()

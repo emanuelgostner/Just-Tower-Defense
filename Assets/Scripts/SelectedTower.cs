@@ -10,7 +10,11 @@ public class SelectedTower : MonoBehaviour
     public Button placeTowerObj;
     public Button upgradeTowerObj;
     public Button removeTowerObj;
-    
+
+    private void Start()
+    {
+        handleButtonVisibility();
+    }
     private void handleButtonVisibility()
     {
         // No buildable place selected

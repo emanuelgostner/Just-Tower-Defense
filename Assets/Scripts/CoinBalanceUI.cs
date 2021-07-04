@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CoinBalanceUI : MonoBehaviour, ICoinBalanceSubscriber
 {
-    private Text _text;
+    private static Text _text;
     CoinBalance coinBalance = CoinBalance.Instance;
     // Start is called before the first frame update
     void Start()

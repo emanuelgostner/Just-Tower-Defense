@@ -60,4 +60,9 @@ public class CoinBalance
             subscriber.CoinBalanceUpdate(_coinBalance);
         }
     }
+
+    public void ResetCoinBalance()
+    {
+        _coinBalance = 200;
+    }
 }
