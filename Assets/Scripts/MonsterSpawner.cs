@@ -1,13 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class MonsterSpawner : MonoBehaviour
 {
     private float nextSpawnTime;
 
     [SerializeField] private GameObject cubeMonster;
-    [SerializeField] private float spawnDelay;
+    [SerializeField] private GameObject cubeMonster2;
+    private float spawnDelay = 2;
     
     // Start is called before the first frame update
     void Start()
@@ -27,7 +30,18 @@ public class MonsterSpawner : MonoBehaviour
     private void Spawn()
     {
         nextSpawnTime = Time.time + spawnDelay;
-        Instantiate(cubeMonster, transform.position, transform.rotation);
+        
+        Random random = new Random();
+        if (random.Next(1, 100) > LevelHandler.GetChanceForCubeMonster2())
+        {
+            // spawn normal cubeMonster
+            Instantiate(cubeMonster, transform.position, transform.rotation);
+        }
+        else
+        {
+            Instantiate(cubeMonster2, transform.position, transform.rotation);
+        }
+        
     }
 
     private bool ShouldSpawn()

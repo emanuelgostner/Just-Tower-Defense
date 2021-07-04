@@ -7,12 +7,19 @@ public static class LevelHandler
     private static int _currentRound = 1;
     private static int _timeForMonsterToPassToGoal = 6;
     private static int _destroyedMonsters = 0;
+    private static int _chanceForCubeMonster2 = 5;
 
     public static int GetCurrentRound()
     {
         return _currentRound;
     }
-    // Handles spawning of monsters and start of new round
+
+    public static int GetChanceForCubeMonster2()
+    {
+        return _chanceForCubeMonster2;
+    }
+    
+    // Handles spawning of monsters
     public static int GetMonstersToBeSpawned()
     {
         return _monstersToBeSpawned;
@@ -54,7 +61,12 @@ public static class LevelHandler
     // Handle rounds
     public static void StartNewRound()
     {
-        CoinBalance.Instance.AddToCoinBalance(GetCoinsPerFinishedRound(_currentRound) * _destroyedMonsters / _userDifficultySelection);
+        CoinBalance.Instance.AddToCoinBalance(GetCoinsPerFinishedRound(_currentRound) * _destroyedMonsters / _userDifficultySelection * 50);
+        // Increase chance for cubemonster2
+        if (_destroyedMonsters == _userDifficultySelection && _chanceForCubeMonster2 <= 95)
+        {
+            _chanceForCubeMonster2 += 5;
+        }
         _destroyedMonsters = 0;
         _currentRound++;
         // TODO: maybe a delay between rounds
