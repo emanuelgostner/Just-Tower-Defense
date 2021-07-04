@@ -19,9 +19,6 @@ public static class LevelHandler
     // for calculations
     private static int _monstersToBeSpawnedAtMost = 5;
     private static int _timeForMonsterToPassToGoal = 6;
-    
-    // UI
-    private static Text _curLevel = GameObject.Find("currentLevel").GetComponent<Text>();
 
     // General getters
     public static int GetCurrentRound()
@@ -99,7 +96,7 @@ public static class LevelHandler
             _monstersDestroyedByReachingEnd = 0;
             _monstersToBeSpawned = _userDifficultySelection;
             
-            _curLevel.text = "Current Level: " + _currentRound;
+            GameObject.Find("currentLevel").GetComponent<Text>().text = "Current Level: " + _currentRound;
         }
     }
 
