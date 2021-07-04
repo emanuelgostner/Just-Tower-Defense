@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     private TextMesh tm;
     public int health = 3;
 
-    // Use this for initialization
+    // Set players health according to the picked difficulty
     void Start () {
         if (this.transform.parent.gameObject.CompareTag("Goal"))
         {
@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
         tm.text = Repeat("- ", health);
     }
 
-    // Update is called once per frame
+    // Rotate health UI/Text always to players camera 
     void Update () {
         // Face the Camera
         transform.forward = Camera.main.transform.forward;
@@ -41,9 +41,11 @@ public class Health : MonoBehaviour
     {
         return health;
     }
+    // Create String with string s  based on the number n
     public static string Repeat(string s, int n)
         => new StringBuilder(s.Length * n).Insert(0, s, n).ToString();
-    // Decrease the current Health or open GameOver Scene if health reached 0
+    
+    // Decrease the current Health of the GameObject
     public void Decrease(int amount = 1)
     {
         GameObject parent = this.transform.parent.gameObject;

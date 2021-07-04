@@ -10,18 +10,18 @@ public class Bullet : MonoBehaviour
     // Target (set by Tower)
     public Transform target;
     
-    // FixedUpdate is called in the same cycles as the physics updates occur
+    // FixedUpdate is called in the same cycles as the physics updates occur (is recommened for transformation changes)
     void FixedUpdate() {
-        // Still has a Target?
+        // Move bullet towards its target(Monster). If the target was already destroyed, the bullet is removed
         if (target) {
             // move this gameObject (bullet) closer to its target
             Vector3 dir = target.position - transform.position;
             GetComponent<Rigidbody>().velocity = dir.normalized * speed;
         } else {
-            // Otherwise destroy self
             Destroy(gameObject);
         }
     }
+    // If the bullet reaches its target(Monster), reduce the Monsters health and remove the bullet from the game
     void OnTriggerEnter(Collider co) {
         Health health = co.GetComponentInChildren<Health>();
         if (health) {

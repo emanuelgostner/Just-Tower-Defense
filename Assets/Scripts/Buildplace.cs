@@ -54,6 +54,7 @@ public class Buildplace : MonoBehaviour {
             coinBalance.SubtractFromCoinBalance(towerCost);
         }
     }
+    // Remove currently placed tower and set the Tower Level back to 0
     public void removeTower()
     {
         Destroy(currentTower);

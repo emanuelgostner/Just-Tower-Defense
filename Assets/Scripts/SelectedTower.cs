@@ -15,6 +15,7 @@ public class SelectedTower : MonoBehaviour
     {
         handleButtonVisibility();
     }
+    // Set the GUI Buttons for Tower actions depending on the state of the currently selected Buildplace
     private void handleButtonVisibility()
     {
         // No buildable place selected
@@ -56,7 +57,7 @@ public class SelectedTower : MonoBehaviour
         this.selectedBuildplace = buildplace;
         handleButtonVisibility();
     }
-
+    // Trigger Buildplace methods by triggering Button actions
     public void placeTower()
     {
         selectedBuildplace.GetComponent<Buildplace>().placeTower();
