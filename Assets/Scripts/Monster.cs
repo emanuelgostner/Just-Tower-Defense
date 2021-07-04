@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,18 +19,17 @@ public class Monster : MonoBehaviour
     private void OnTriggerEnter(Collider co) {
         // If the collision object is "End" access its healthBar Script and call method to decrease health
         // Then destory monster object (gameObject = the gameObject this script is attached to)
-        if (co.name == "End") {
-            // 
+        if (co.name == "End")
+        {
+            LevelHandler.IncreaseMonsterDestroyedByReachingEnd();
             co.GetComponentInChildren<Health>().Decrease(monsterHealthReduceValue);
             // Destroys the monster after reaching the goal
             Destroy(gameObject);
-            LevelHandler.DecreaseCurrentMonsters();
-
-            if (LevelHandler.GetCurrentMonsters() == 0)
-            {
-                // Start new round, increase coin balance and current round, reset monster spawner
-                LevelHandler.StartNewRound();
-            }
         }
+    }
+
+    void OnDestroy()
+    {
+        LevelHandler.MonsterDestroyed();
     }
 }

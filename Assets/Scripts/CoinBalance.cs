@@ -55,7 +55,6 @@ public class CoinBalance
     }
     private void UpdateBalance()
     {
-        Debug.Log("CoinBalance/updateBalance");
         foreach (var subscriber in subscribers)
         {
             subscriber.CoinBalanceUpdate(_coinBalance);

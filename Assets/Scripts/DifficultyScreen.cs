@@ -11,6 +11,7 @@ public class DifficultyScreen : MonoBehaviour
     };
     private static Difficulty difficulty = Difficulty.Medium;
     
+    // Auswahl von verschiedenen Schwierigkeitsgraden 
     public void EasyButton()
     {
         difficulty = Difficulty.Easy;

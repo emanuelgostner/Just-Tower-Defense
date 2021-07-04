@@ -41,14 +41,13 @@ public class MonsterSpawner : MonoBehaviour
         {
             Instantiate(cubeMonster2, transform.position, transform.rotation);
         }
-        
     }
 
     private bool ShouldSpawn()
     {
         if (Time.time > nextSpawnTime && LevelHandler.GetMonstersToBeSpawned() > 0)
         {
-            LevelHandler.DecreaseMonstersToBeSpawnedAndIncreaseCurrentMonsters();
+            LevelHandler.DecreaseMonstersToBeSpawnedAndIncreaseSpawnedMonsters();
             return true;
         }
         return false;

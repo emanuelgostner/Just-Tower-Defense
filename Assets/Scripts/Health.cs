@@ -58,10 +58,9 @@ public class Health : MonoBehaviour
         else if(parent.CompareTag("Enemy"))
         {
             DecreaseHealth(amount);
-            if (health <=0)
+            if (health ==0)
             {
                 Destroy(parent);
-                LevelHandler.IncreaseDestroyedMonsters();
             }
         }
     }

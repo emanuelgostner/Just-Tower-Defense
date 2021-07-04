@@ -13,6 +13,7 @@ public class PlayfabManager : MonoBehaviour
     public InputField emailInput;
     public InputField passwordInput;
 
+    //Authentifizierungsmöglichkeit
     public void LoginButton()
     {
         var request = new LoginWithEmailAddressRequest
