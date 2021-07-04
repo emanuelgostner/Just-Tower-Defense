@@ -15,11 +15,13 @@ public static class LevelHandler
     // handle game balance
     private static int _currentRound = 1;
     private static int _chanceForCubeMonster2 = 5;
-    private static Text _curLevel = GameObject.Find("currentLevel").GetComponent<Text>();
-    
+
     // for calculations
     private static int _monstersToBeSpawnedAtMost = 5;
     private static int _timeForMonsterToPassToGoal = 6;
+    
+    // UI
+    private static Text _curLevel = GameObject.Find("currentLevel").GetComponent<Text>();
 
     // General getters
     public static int GetCurrentRound()
