@@ -1,3 +1,6 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 public static class LevelHandler
 {
     private static int _userDifficultySelection = 3;
@@ -8,6 +11,7 @@ public static class LevelHandler
     private static int _timeForMonsterToPassToGoal = 6;
     private static int _destroyedMonsters = 0;
     private static int _chanceForCubeMonster2 = 5;
+    private static Text _curLevel = GameObject.Find("currentLevel").GetComponent<Text>();
 
     public static int GetCurrentRound()
     {
@@ -61,6 +65,7 @@ public static class LevelHandler
     // Handle rounds
     public static void StartNewRound()
     {
+        
         CoinBalance.Instance.AddToCoinBalance(GetCoinsPerFinishedRound(_currentRound) * _destroyedMonsters / _userDifficultySelection * 50);
         // Increase chance for cubemonster2
         if (_destroyedMonsters == _userDifficultySelection && _chanceForCubeMonster2 <= 95)
@@ -71,6 +76,7 @@ public static class LevelHandler
         _currentRound++;
         // TODO: maybe a delay between rounds
         _monstersToBeSpawned = _userDifficultySelection;
+        _curLevel.text = "Current Level: " + _currentRound;
     }
 
     public static void IncreaseDestroyedMonsters()
