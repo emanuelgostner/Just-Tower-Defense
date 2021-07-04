@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
+
+using UnityEngine;
 
 public static class LevelHandler
 {
@@ -12,6 +15,7 @@ public static class LevelHandler
     // handle game balance
     private static int _currentRound = 1;
     private static int _chanceForCubeMonster2 = 5;
+    private static Text _curLevel = GameObject.Find("currentLevel").GetComponent<Text>();
     
     // for calculations
     private static int _monstersToBeSpawnedAtMost = 5;
@@ -92,6 +96,8 @@ public static class LevelHandler
             _monstersDestroyed = 0;
             _monstersDestroyedByReachingEnd = 0;
             _monstersToBeSpawned = _userDifficultySelection;
+            
+            _curLevel.text = "Current Level: " + _currentRound;
         }
     }
 
